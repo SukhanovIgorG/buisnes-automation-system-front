@@ -1,0 +1,60 @@
+.container {
+  width: 100%;
+  height: 8px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  background-color: #e9e6e6;
+  border-radius: 10px;
+  .bit {
+    display: contents;
+  }
+
+  @mixin line {
+    width: 50%;
+    height: 8px;
+    background-color: #e9e6e6;
+    content: "";
+    margin: 0 -5px;
+  }
+
+  @mixin circle {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #a6a6a6;
+    box-sizing: border-box;
+    content: "";
+    margin: 0 -5px;
+    z-index: 2;
+  }
+
+  .circle_default {
+    @include circle;
+    background-color: #a6a6a6;
+  }
+
+  .circle_outline {
+    @include circle;
+    background-color: #a6a6a6;
+    border: solid #5558fa 6px;
+  }
+
+  .circle_contain {
+    @include circle;
+    background-image: url("./assets/Dot.png");
+    background-position: center center;
+    width: 16px;
+    height: 16px;
+    background-size: auto;
+  }
+
+  .line_outline {
+    @include line;
+  }
+  .line_contain {
+    @include line;
+    background-color: #5558fa;
+  }
+}

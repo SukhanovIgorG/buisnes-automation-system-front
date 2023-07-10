@@ -1,0 +1,32 @@
+.container { 
+  display: flex;
+  padding: 0 0 24px 0;
+  margin: 0 0 24px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #D5E4F7;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 24px 0 0; 
+
+    font-size: 25px;
+  }
+
+  .info_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+  .link_wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+}

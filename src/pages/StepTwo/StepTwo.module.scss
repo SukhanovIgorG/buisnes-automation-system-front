@@ -1,0 +1,93 @@
+.form {
+  .container {
+    @mixin button {
+      height: 44px;
+      width: 44px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding: 0;
+    margin: 60px 0 18px 0;
+
+    .legend {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .errors {
+      height: 8px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 16px;
+      color: #f84a62;
+    }
+
+    .input_container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      input {
+        height: 44px;
+        width: 100%;
+        border-radius: 4px;
+        border: 1px solid rgba(0, 0, 0, 0.04);
+
+        margin: 4px 0;
+        padding: 0 12px;
+      }
+
+      .waste {
+        @include button;
+        background-image: url("../assets/waste.png");
+      }
+    }
+    .append {
+      @include button;
+      background-image: url("../assets/append.png");
+
+      border: solid 1.5px #5558fa;
+      border-radius: 4px;
+    }
+    .container_group {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 0;
+      margin: 18px 0;
+    
+      border: none;
+    
+      .legend {
+        text-align: start;
+      }
+    
+      label {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: left;
+    
+        color: #333333;
+      }
+    
+      .select {
+        height: 44px;
+        border-radius: 4px;
+        border: 1px solid rgba(0, 0, 0, 0.04);
+      }
+    }
+  }
+}

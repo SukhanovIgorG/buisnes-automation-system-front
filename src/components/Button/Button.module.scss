@@ -1,0 +1,49 @@
+@mixin button {
+  padding: 0 16px;
+  width: max-content;
+  height: 44px;
+  border: 2px solid #5558fa;
+  border-radius: 4px;
+  text-decoration: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+
+  color: #ffffff
+}
+
+.contained {
+  @include button;
+  background: #5558fa;
+}
+.contained:hover {
+  @include button;
+  background: #3a3df8;
+}
+.contained:active {
+  @include button;
+  background: #9c3af8;
+}
+
+.outlined {
+  @include button;
+  background: #ffffff;
+  color: #5558fa;
+}
+.outlined:hover {
+  @include button;
+  background: #ffffff;
+  color: #3a3df8;
+}
+.outlined:active {
+  @include button;
+  background: #ffffff;
+  color: 9c3af8;
+}

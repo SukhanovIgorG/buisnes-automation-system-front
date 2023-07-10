@@ -1,0 +1,22 @@
+.container_status {
+  height: 312px;
+  width: 460px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  background-color: #fff;
+  border-radius: 12px;
+
+  padding: 32px;
+  box-sizing: border-box;
+
+  .header{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+    color: #333333;
+  }
+}

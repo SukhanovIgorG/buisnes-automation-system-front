@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 18px 0;
+
+  margin: 100px 0 0 0;
+
+  label {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+
+    color: #333333;
+  }
+
+  
+  .textarea {
+    min-height: 84px;
+    border-radius: 4px;
+    border: 2px solid rgba(0, 0, 0, 0.04);
+    
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+.errors {
+  height: 8px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 16px;
+  color: #f84a62;
+}
