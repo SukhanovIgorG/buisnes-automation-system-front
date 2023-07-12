@@ -22,6 +22,11 @@ export default function Main() {
   const tell: string = useSelector(
     (state: InitialStateTypes) => state.formValue.tell,
   )
+  const currentUser = useSelector(
+    (state: InitialStateTypes) => state.currentUser,
+  )
+    console.log('currentUser :>> ', currentUser);
+
   const {
     register,
     handleSubmit,

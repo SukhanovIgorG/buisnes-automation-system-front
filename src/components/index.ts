@@ -6,6 +6,7 @@ import { StepperLine } from "./StepperLine/StepperLine"
 import { Textarea } from "./Textarea/Textarea"
 import { LinkButton } from "./LinkButton/LinkButton"
 import { ModalWindow } from "./ModalWindow/ModalWindow"
+import { ProtectedRoute } from "./ProtectedRoute/ProtectedRoute.js"
 
 export {
   FormContainer,
@@ -16,4 +17,5 @@ export {
   LinkButton,
   ModalWindow,
   Status,
+  ProtectedRoute
 }

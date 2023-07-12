@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { submitAction } from "./store.actions"
+import { loginAction, submitAction } from "./store.actions"
 import type { InitialStateTypes } from "./StoreTypes"
 
 const initialState: InitialStateTypes = {
@@ -21,6 +21,8 @@ const initialState: InitialStateTypes = {
   },
   loading: false,
   error: "",
+  loggedIn: false,
+  currentUser: {}
 }
 
 const rootSlice = createSlice({
@@ -59,17 +61,34 @@ const rootSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(submitAction.pending, (state) => {
+    // builder.addCase(submitAction.pending, (state) => {
+    //   state.loading = true
+    //   state.error = undefined
+    // })
+    // builder.addCase(submitAction.fulfilled, (state, action) => {
+    //   state.loading = false
+    //   state.error = undefined
+    // })
+    // builder.addCase(submitAction.rejected, (state, { payload }) => {
+    //   state.loading = false
+    //   state.error = payload
+    // })
+    builder.addCase(loginAction.pending, (state) => {
       state.loading = true
       state.error = undefined
     })
-    builder.addCase(submitAction.fulfilled, (state, action) => {
+    builder.addCase(loginAction.fulfilled, (state, { payload }) => {
       state.loading = false
       state.error = undefined
+      state.loggedIn = true
+      state.currentUser = payload.user
+      localStorage.setItem('JWT', payload.token)
     })
-    builder.addCase(submitAction.rejected, (state, { payload }) => {
+    builder.addCase(loginAction.rejected, (state, { payload }) => {
       state.loading = false
       state.error = payload
+      state.loggedIn = false
+      state.currentUser = {}
     })
   },
 })

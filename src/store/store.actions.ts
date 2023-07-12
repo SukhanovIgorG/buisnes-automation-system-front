@@ -1,6 +1,7 @@
 import axios from "axios"
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import { formValueTypes } from "./StoreTypes"
+import type { LoginFormInput } from "../pages/Login/login.d"
 
 export interface OptionsDefault {
   rejectValue: string
@@ -11,8 +12,23 @@ export interface submitActionPayload {
   modal: (arg: "ok" | "error") => void
 }
 
+// export interface User {
+//   name: string,
+//   email: string,
+//   login: string,
+//   tell: string,
+//   placeId: string,
+//   photo: string,
+// }
+
+// export interface loginActionPayload {
+//   token: string
+//   user: User
+// }
+
+
 export const submitAction = createAsyncThunk<
-  void,
+  any,
   submitActionPayload,
   OptionsDefault
 >("root/submitAction", async (payload, { rejectWithValue }) => {
@@ -31,5 +47,22 @@ export const submitAction = createAsyncThunk<
   } catch (error) {
     modal("error")
     return rejectWithValue("Ошибка отправки")
+  }
+})
+export const loginAction = createAsyncThunk<
+  any,
+  LoginFormInput,
+  OptionsDefault
+>("root/loginAction", async (payload, { rejectWithValue }) => {
+  try {
+    console.log('payload :>> ', payload);
+    const res = await axios.post(
+      "http://localhost:7777/login",
+      payload,
+    )
+    return res.data
+  } catch (err: any) {
+    console.log('ошибка авторизации', err?.message);
+    return rejectWithValue(err?.message || "Ошибка авторизации")
   }
 })

@@ -21,4 +21,6 @@ export interface InitialStateTypes {
   formValue: formValueTypes
   loading: boolean
   error: unknown | string
+  loggedIn: boolean
+  currentUser: { }
 }
