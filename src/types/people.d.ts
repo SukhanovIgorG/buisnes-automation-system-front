@@ -1,5 +1,6 @@
 export interface People {
-    name: string,
-    tell: string,
+    name: string
+    tell: string
     email: string
-}
+    class: string
+  }

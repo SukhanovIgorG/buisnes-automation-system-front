@@ -1,6 +1,6 @@
 import axios from "axios"
 import { createAsyncThunk } from "@reduxjs/toolkit"
-import { formValueTypes } from "./StoreTypes"
+import type { Order } from '../types'
 import type { LoginFormInput } from "../pages/Login/login.d"
 
 export interface OptionsDefault {
@@ -8,7 +8,7 @@ export interface OptionsDefault {
 }
 
 export interface submitActionPayload {
-  data: formValueTypes
+  data: Order
   modal: (arg: "ok" | "error") => void
 }
 
