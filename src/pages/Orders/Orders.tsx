@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
-import { setNickName, setSerName, setName, setSex } from "../../store/rootSlice"
+import { setSerName, setName, setSex } from "../../store/rootSlice"
 import { joiResolver } from "@hookform/resolvers/joi"
 
 import type { InitialStateTypes } from "../../store/StoreTypes"

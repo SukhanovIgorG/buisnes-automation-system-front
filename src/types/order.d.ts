@@ -4,7 +4,7 @@ export interface Order {
   email: string
   name: string
   sername: string
-  sex: " " | "man" | "woman"
+  workers: string
   advantages: {
     field: string
   }[]
@@ -15,4 +15,19 @@ export interface Order {
   }
   radio: ""
   textarea: ""
+}
+
+export interface NewOrder {
+      banquetNum: number,
+      date: string,
+      peopleCount: number,
+      description: string,
+      workers: [],
+      managers: [],
+      customer: People,
+      price: number,
+      discount: number,
+      prepayment: number,
+      payment: number,
+      goods: []
 }

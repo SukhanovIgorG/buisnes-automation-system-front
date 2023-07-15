@@ -29,7 +29,7 @@ const rootSlice = createSlice({
   name: "root",
   initialState,
   reducers: {
-    setNickName: (state, action) => {
+    setDate: (state, action) => {
       state.formNewOrder.date = action.payload
     },
     setEmail: (state, action) => {
@@ -95,10 +95,10 @@ const rootSlice = createSlice({
 
 export const reducer = rootSlice.reducer
 export const {
+  setDate,
   setEmail,
   setTell,
   setName,
-  setNickName,
   setSerName,
   setSex,
   setAdvantages,
