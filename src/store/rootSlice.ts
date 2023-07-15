@@ -3,11 +3,11 @@ import { loginAction, submitAction } from "./store.actions"
 import type { InitialStateTypes } from "./StoreTypes"
 
 const initialState: InitialStateTypes = {
-  formValue: {
+  formNewOrder: {
+    date: "",
     email: "sukhanovgarik@yandex.ru",
     tell: "+7 999 529-55-96",
     name: "",
-    nickname: "",
     sername: "",
     sex: " ",
     advantages: [],
@@ -29,35 +29,35 @@ const rootSlice = createSlice({
   name: "root",
   initialState,
   reducers: {
+    setNickName: (state, action) => {
+      state.formNewOrder.date = action.payload
+    },
     setEmail: (state, action) => {
-      state.formValue.email = action.payload
+      state.formNewOrder.email = action.payload
     },
     setTell: (state, action) => {
-      state.formValue.tell = action.payload
+      state.formNewOrder.tell = action.payload
     },
     setName: (state, action) => {
-      state.formValue.name = action.payload
-    },
-    setNickName: (state, action) => {
-      state.formValue.nickname = action.payload
+      state.formNewOrder.name = action.payload
     },
     setSerName: (state, action) => {
-      state.formValue.sername = action.payload
+      state.formNewOrder.sername = action.payload
     },
     setSex: (state, action) => {
-      state.formValue.sex = action.payload
+      state.formNewOrder.sex = action.payload
     },
     setAdvantages: (state, action) => {
-      state.formValue.advantages = action.payload
+      state.formNewOrder.advantages = action.payload
     },
     setCheckbox: (state, action) => {
-      state.formValue.checkbox = action.payload
+      state.formNewOrder.checkbox = action.payload
     },
     setRadio: (state, action) => {
-      state.formValue.radio = action.payload
+      state.formNewOrder.radio = action.payload
     },
     setTextArea: (state, action) => {
-      state.formValue.textarea = action.payload
+      state.formNewOrder.textarea = action.payload
     },
   },
   extraReducers: (builder) => {

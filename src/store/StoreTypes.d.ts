@@ -1,24 +1,26 @@
-export interface formValueTypes {
-  email: string
-  tell: string
-  name: string
-  nickname: string
-  sername: string
-  sex: " " | "man" | "woman"
-  advantages: {
-    field: string
-  }[]
-  checkbox: {
-    one: string
-    two: string
-    tree: string
-  }
-  radio: ""
-  textarea: ""
-}
+// export interface formValueTypes {
+//   email: string
+//   tell: string
+//   name: string
+//   nickname: string
+//   sername: string
+//   sex: " " | "man" | "woman"
+//   advantages: {
+//     field: string
+//   }[]
+//   checkbox: {
+//     one: string
+//     two: string
+//     tree: string
+//   }
+//   radio: ""
+//   textarea: ""
+// }
+
+import { Order } from "../types"
 
 export interface InitialStateTypes {
-  formValue: formValueTypes
+  formNewOrder: Order
   loading: boolean
   error: unknown | string
   loggedIn: boolean

@@ -11,7 +11,7 @@ import { loginAction } from "../../store/store.actions"
 import { Typography, Box } from '@mui/material';
 import { AccountCircle, Lock } from '@mui/icons-material';
 
-// import { Header } from '../../components';
+import { Header } from '../../components';
 // import { apiErrorController } from '../../utils/errorController';
 
 import type { LoginFormInput } from './login.d';
@@ -48,7 +48,7 @@ function Login () {
 
   return (
     <Box className={styles.container}>
-      {/* <Header loggedIn={false}></Header> */}
+      <Header loggedIn={loggedIn}></Header>
       <Box className={styles.form_box_log}>
         <Box className={styles.form_value}>
           <Box

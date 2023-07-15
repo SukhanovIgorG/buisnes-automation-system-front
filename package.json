@@ -24,6 +24,10 @@
     "deploy-ghp": "gh-pages -d build",
     "deploy-server": "npm run build && scp -r ./build/* sukhanovgarik@51.250.4.189:/home/sukhanovgarik/cloud.ru-test"
   },
+  "engines": {
+    "npm": "9.8.0",
+    "node": "19.8.1"
+  },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
