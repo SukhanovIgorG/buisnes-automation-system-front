@@ -14,12 +14,12 @@ import { AccountCircle, Lock } from '@mui/icons-material';
 // import { Header } from '../../components';
 // import { apiErrorController } from '../../utils/errorController';
 
-import type { LoginFormInput, DialogProps } from './login.d';
+import type { LoginFormInput } from './login.d';
 import { schema } from './shema';
 
 import styles from './login.module.scss';
 
-function Login ({ onLogin, setCurrentUser }: DialogProps) {
+function Login () {
   const navigate = useNavigate();
   const dispatch = useDispatch()
   const globalError = useSelector((state: InitialStateTypes) => state.error)
@@ -33,10 +33,6 @@ function Login ({ onLogin, setCurrentUser }: DialogProps) {
   const { register, handleSubmit, formState: { errors } } = useForm<LoginFormInput>({
     resolver: joiResolver(schema),
   });
-
-  function handleLogin(status: boolean): void {
-    onLogin(status);
-  }
 
   useEffect(() => {
     loggedIn ? navigate('/') : null;
