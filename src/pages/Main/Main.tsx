@@ -1,15 +1,17 @@
-import { Typography } from '@mui/material';
-import { Header } from '../../components';
-import styles from "./Main.module.scss"
+import { Box, Typography } from '@mui/material';
+import { Header, Footer, Copyright } from '../../components';
 import { useSelector } from 'react-redux';
 import { InitialStateTypes } from '../../store';
+import { Link } from 'react-router-dom';
+
+import styles from "./Main.module.scss"
 
 export default function Main() {
 
   const loggedIn = useSelector((state: InitialStateTypes) => state.loggedIn)
 
   return (
-    <div className={styles.wrapper}>
+      <Box className={styles.wrapper}>
       <Header loggedIn={loggedIn} />
       <Typography variant="h1" gutterBottom>
         Добро пожаловать в систему автоматизации бизнес процессов
@@ -17,12 +19,15 @@ export default function Main() {
       <Typography variant="body1" gutterBottom>
         А тут вы читаете о том почему стоит выбрать нас и какие проблемы мы поможем вам решить, но эту статью я пока не написал.
       </Typography>
-      <Typography variant="button" display="block" gutterBottom>
+      <Link to="/pricing" className={styles.link}>
         Тарифы
-      </Typography>
-      <Typography variant="button" display="block" gutterBottom>
+      </Link>
+      <Link to="/pricing" className={styles.link}>
         Партнеры
-      </Typography>
-    </div>
+      </Link>
+      <Footer>
+        <Copyright></Copyright>
+      </Footer>
+    </Box>
   )
 }

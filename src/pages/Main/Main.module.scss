@@ -1,3 +1,26 @@
 .wrapper {
   color: #fff;
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding-top: 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .link {
+    text-decoration: none;
+    color: #fff;
+
+    border: #fff 1px solid;
+    border-radius: 5px;
+
+    height: auto;
+    width: fit-content;
+    min-width: 100px;
+
+    padding: 5px;
+    margin: 5px;
+  }
 }

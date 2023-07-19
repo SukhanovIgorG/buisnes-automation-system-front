@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Route, Routes, HashRouter } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 
-import { Login ,Main, Orders, StepOne, StepTwo, StepTree } from "./pages"
+import { Login ,Main, Orders, Pricing, StepOne, StepTwo, StepTree } from "./pages"
 import { ProtectedRoute } from "./components"
 
 import type { InitialStateTypes } from './store';
@@ -17,6 +17,7 @@ function App() {
       <HashRouter>
         <Routes>
           <Route path="/" element={<Main />} />
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="/login" element={<Login />}/>
             <Route path="/orders" element={<Orders />} />
           {/* <Route path="/orders" element={<ProtectedRoute loggedIn={loggedIn} />} >
